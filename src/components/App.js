@@ -1,20 +1,24 @@
-import video from "../data/video.js";
+import React, { useState } from "react";
+import Video from "./Video";
+import Title from "./Title";
+import Buttons from './Buttons'
+import HideButton from "./HideButton";
+import Comment from "./Comment";
 
 function App() {
-  console.log("Here's your data:", video);
+
+  const [ hideComments , setHideComments ] = useState(true)
 
   return (
-    <div className="App">
-      <iframe
-        width="919"
-        height="525"
-        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-        frameBorder="0"
-        allowFullScreen
-        title="Thinking in React"
-      />
-    </div>
-  );
+    <React.Fragment>
+    <Video />
+    <Title />
+    <Buttons />
+    <HideButton hideComments={hideComments} setHideComments={setHideComments} />
+    {hideComments ? <Comment /> : null}
+    </React.Fragment>
+  )
+
 }
 
 export default App;

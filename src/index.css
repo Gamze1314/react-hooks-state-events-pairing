@@ -10,3 +10,8 @@ body {
 .App {
   text-align: center;
 }
+
+.centered-text {
+  text-align: center;
+  margin-top: 10px;
+}
